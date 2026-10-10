@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+RideShare — Java 3
 
-## Getting Started
+RideShare është një aplikacion për gjetjen e udhëtimeve drejt AAB-së. Projekti është krijuar me Next.js, React dhe TypeScript.
 
-First, run the development server:
+Funksionalitetet
 
-```bash
+Shfaqja e listës së udhëtimeve të disponueshme.
+
+Shfaqja e detajeve të secilit udhëtim.
+
+Shfaqja e orës së nisjes dhe vendtakimit.
+
+Shfaqja e numrit të vendeve të lira.
+
+Hapja e faqes për kërkesë rezervimi kur ka vende të lira.
+
+Shfaqja e mesazhit kur nuk ka vende të lira.
+
+Shfaqja e faqes kur udhëtimi nuk gjendet.
+
+Shënim: Ky është version demonstrues. Të dhënat e udhëtimeve ruhen në një listë në kod. Kërkesat për rezervim nuk ruhen në databazë.
+
+Teknologjitë
+
+Next.js
+
+React
+
+TypeScript
+
+CSS
+
+Si të ekzekutohet projekti
+
+1. Instalimi i varësive
+
+Hape terminalin në dosjen e projektit dhe ekzekuto:
+
+npm install
+
+2. Nisja e serverit
+
+Ekzekuto:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Hapja e aplikacionit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hape në shfletues adresën që shfaqet në terminal, zakonisht:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+Nëse porta 3000 është e zënë, Next.js mund të përdorë një portë tjetër, si 3001.
 
-To learn more about Next.js, take a look at the following resources:
+Struktura e projektit
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+app/page.tsx — faqja kryesore me listën e udhëtimeve.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+app/layout.tsx — struktura kryesore e aplikacionit.
 
-## Deploy on Vercel
+app/globals.css — stilet e aplikacionit.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+app/udhetimi/[id]/page.tsx — faqja me detajet e udhëtimit.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+app/udhetimi/[id]/kerkesa/page.tsx — faqja për kërkesën e rezervimit.
+
+app/udhetimi/[id]/not-found.tsx — faqja që shfaqet kur udhëtimi nuk gjendet.
+
+components/KartaUdhetimi.tsx — komponenti për shfaqjen e kartës së udhëtimit.
+
+lib/udhetimet.ts — të dhënat e udhëtimeve dhe funksioni për gjetjen e tyre.
+
+Dokumentacioni
+
+Dokumentacioni i Next.js
+
+Mëso Next.js
+
+GitHub Repository
+
+Publikimi i aplikacionit
+
+Aplikacioni mund të publikohet duke përdorur Vercel.
