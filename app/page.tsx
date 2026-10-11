@@ -1,21 +1,34 @@
 import { KartaUdhetimi } from "@/components/KartaUdhetimi";
-import { udhetimet } from "@/lib/udhetimet";
+import { lexoUdhetimet, type Udhetim } from "@/lib/udhetimet";
 
-export default function Home() {
+
+export default async function Home() {
+  let udhetimet: Udhetim[];
+
+  try {
+    udhetimet = await lexoUdhetimet();
+  } catch {
+    return (
+      <main>
+        <h1>RideShare</h1>
+        <p role="alert">
+          Nuk u lidhëm me databazën. Provo përsëri.
+        </p>
+        <a className="action" href="/">
+          Provo përsëri
+        </a>
+      </main>
+    );
+  }
+
   return (
     <main>
-      <header className="hero">
-        <p className="eyebrow">UDHËTO SË BASHKU</p>
-        <h1>RideShare</h1>
-        <p>
-          Gjej një udhëtim për në AAB dhe zgjidh nisjen
-          që të përshtatet.
-        </p>
-      </header>
+      <h1>RideShare · Udhëtimet për AAB</h1>
+      <p>Burimi: Neon · të dhëna fiktive për ushtrime</p>
 
-      <section>
-        <h2>Udhëtimet e disponueshme</h2>
-
+      {udhetimet.length === 0 ? (
+        <p>Nuk ka udhëtime për momentin.</p>
+      ) : (
         <div className="trip-list">
           {udhetimet.map((udhetim) => (
             <KartaUdhetimi
@@ -24,7 +37,7 @@ export default function Home() {
             />
           ))}
         </div>
-      </section>
+      )}
     </main>
   );
 }

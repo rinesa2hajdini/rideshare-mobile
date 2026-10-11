@@ -9,7 +9,26 @@ export default async function Kerkesa({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const udhetim = gjejUdhetimin(id);
+
+  let udhetim;
+
+  try {
+    udhetim = await gjejUdhetimin(id);
+  } catch {
+    return (
+      <main>
+        <section className="hero">
+          <h1>RideShare</h1>
+          <p role="alert">
+            Nuk u lidhëm me databazën. Provo përsëri.
+          </p>
+          <a className="action" href={`/udhetimi/${id}/kerkesa`}>
+            Provo përsëri
+          </a>
+        </section>
+      </main>
+    );
+  }
 
   if (!udhetim) {
     notFound();
