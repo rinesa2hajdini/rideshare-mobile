@@ -6,11 +6,26 @@ RideShare është një aplikacion i krijuar me Next.js, React dhe TypeScript pë
 
 ## Provat e kryera
 
-- **Faqja kryesore:** E hapa aplikacionin në browser dhe u shfaqën tri udhëtimet me orën e nisjes dhe numrin e vendeve të lira.
-- **Detajet e udhëtimit:** Klikova te “Shiko detajet” dhe u shfaqën të dhënat për udhëtimin e zgjedhur.
-- **Kërkesa për rezervim:** Për një udhëtim me vende të lira hapa faqen “Kërko vend” dhe u shfaq mesazhi se rezervimi është vetëm demonstrim dhe nuk ruhet në databazë.
-- **Udhëtimi pa vende të lira:** E hapa udhëtimin nga Lipjani dhe aplikacioni shfaqi mesazhin “Nuk ka vende të lira”.
-- **Udhëtimi që nuk ekziston:** E hapa adresën `/udhetimi/999` dhe u shfaq faqja “Udhëtimi nuk u gjet”.
+## Provat e kryera
+
+### Prova 1 — Faqja kryesore dhe lista e udhëtimeve
+
+Hapat: E hapa aplikacionin në browser dhe kontrollova listën e udhëtimeve.
+
+Rezultati: U shfaqën tri udhëtimet me destinacionin, orën e nisjes dhe numrin e vendeve të lira.
+
+### Prova 2 — Detajet dhe kërkesa për rezervim
+
+Hapat: Klikova te “Shiko detajet” për një udhëtim me vende të lira dhe pastaj te “Kërko vend”.
+
+Rezultati: U hapën faqja e detajeve dhe faqja e kërkesës për rezervim. Aplikacioni tregoi se rezervimi është demonstrues dhe nuk ruhet në databazë.
+
+### Prova 3 — Udhëtimi pa vende dhe adresa e pavlefshme
+
+Hapat: E hapa udhëtimin nga Lipjani, i cili nuk ka vende të lira, dhe pastaj testova adresën `/udhetimi/999`.
+
+Rezultati: Aplikacioni shfaqi mesazhin “Nuk ka vende të lira” për udhëtimin nga Lipjani dhe faqen “Udhëtimi nuk u gjet” për adresën e pavlefshme.
+
 
 ## Kufizimet aktuale
 
