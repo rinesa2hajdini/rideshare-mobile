@@ -3,6 +3,8 @@ import { KartaUdhetimi } from "@/components/KartaUdhetimi";
 import { HyrjaGitHub } from "@/components/HyrjaGitHub";
 import { lexoUdhetimet, type Udhetim } from "@/lib/udhetimet";
 
+export const instant = false;
+
 export default async function Home() {
   let udhetimet: Udhetim[];
 
@@ -33,8 +35,11 @@ export default async function Home() {
         <p>Nuk ka udhëtime për momentin.</p>
       ) : (
         <div className="trip-list">
-          {udhetimet.map((udhetim) => (
-            <KartaUdhetimi key={udhetim.id} udhetim={udhetim} />
+          {udhetimet.map((udhetim: Udhetim) => (
+            <KartaUdhetimi
+              key={udhetim.id}
+              udhetim={udhetim}
+            />
           ))}
         </div>
       )}

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
 
+export const instant = false;
+
 export default async function Kerkesa({
   params,
 }: {
