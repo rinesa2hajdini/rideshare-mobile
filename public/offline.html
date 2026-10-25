@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#be3455">
+  <title>RideShare — Pa internet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      min-height: 100vh;
+      background: #0b101b;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    h1 {
+      color: #f08aa0;
+    }
+
+    .message {
+      color: #c5cad5;
+      line-height: 1.6;
+    }
+
+    .trip {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid #343b4b;
+      border-radius: 12px;
+      background: #151c2a;
+    }
+
+    .trip h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .trip p {
+      margin: 8px 0;
+      color: #d6dbe5;
+    }
+
+    .status {
+      margin-top: 24px;
+      color: #f08aa0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>RideShare AAB</h1>
+    <p class="message">
+      Nuk ka lidhje me internetin. Këto janë të dhënat publike
+      të udhëtimeve që janë ruajtur më parë në këtë pajisje.
+    </p>
+
+    <section id="trips">
+      <p class="message">Duke kërkuar udhëtimet e ruajtura...</p>
+    </section>
+
+    <p class="status" id="saved-at"></p>
+
+    <p class="message">
+      Kjo faqe shfaq vetëm informacionin e ruajtur.
+      Nuk mund të bëhet rezervim pa internet.
+    </p>
+  </main>
+
+  <script>
+    async function shfaqUdhetimet() {
+      const tripsElement = document.getElementById("trips");
+      const savedAtElement = document.getElementById("saved-at");
+
+      try {
+        const cache = await caches.open("rideshare-public-v1");
+        const response = await cache.match("/api/udhetimet");
+
+        if (!response) {
+          tripsElement.innerHTML =
+            "<p class='message'>Nuk ka ende udhëtime të ruajtura. Lidhu me internetin dhe hape aplikacionin një herë.</p>";
+          return;
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data.trips) || data.trips.length === 0) {
+          tripsElement.innerHTML =
+            "<p class='message'>Nuk ka udhëtime të ruajtura.</p>";
+          return;
+        }
+
+        tripsElement.replaceChildren();
+
+        for (const trip of data.trips) {
+          const card = document.createElement("article");
+          card.className = "trip";
+
+          const title = document.createElement("h2");
+          title.textContent = `${trip.nisja} → ${trip.destinacioni}`;
+
+          const time = document.createElement("p");
+          time.textContent = `Ora: ${trip.ora}`;
+
+          const meeting = document.createElement("p");
+          meeting.textContent = `Vendtakimi: ${trip.vendtakimi}`;
+
+          const seats = document.createElement("p");
+          seats.textContent = `Vende të lira: ${trip.vende}`;
+
+          card.append(title, time, meeting, seats);
+          tripsElement.appendChild(card);
+        }
+
+        const savedAt = response.headers.get("x-rideshare-saved-at");
+
+        if (savedAt) {
+          const date = new Date(savedAt);
+          savedAtElement.textContent =
+            "Të dhënat u ruajtën për herë të fundit: " +
+            date.toLocaleString("sq-AL");
+        }
+      } catch {
+        tripsElement.textContent =
+          "Nuk mund të lexohen udhëtimet e ruajtura në këtë pajisje.";
+      }
+    }
+
+    shfaqUdhetimet();
+  </script>
+</body>
+</html>
