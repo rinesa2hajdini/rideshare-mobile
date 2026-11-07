@@ -24,7 +24,7 @@ Shtova shfaqjen e vendtakimit në kartelën e secilit udhëtim, duke përdorur `
 
 ## Versionet
 Para: [https://github.com/rinesa2hajdini/rideshare-mobile/commit/79934a5daf0c016768a166e714765f35e48b767e)]
-Pas: [PLOTËSO]
+Pas: [(https://github.com/rinesa2hajdini/rideshare-mobile/commit/bb463d26b5db1b76f16b275e6955c2c8aa643136)]
 
 ## Provat që bëra
 ### Prova 1
