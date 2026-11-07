@@ -20,6 +20,9 @@ Të dhënat fiktive të rastit: Mitrovicë → AAB, 09:25, 3 vende. Ora për pro
 2. Përdoruesi duhej të hapte detajet për ta parë vendtakimin, edhe pse ky informacion është i rëndësishëm për udhëtimin.
 
 ## Korrigjimi
+
+Skedari: `components/KartaUdhetimi.tsx`
+
 Shtova shfaqjen e vendtakimit në kartelën e secilit udhëtim, duke përdorur `udhetim.vendtakimi`. Kështu përdoruesi e sheh këtë informacion drejtpërdrejt në listë, pa pasur nevojë të hapë detajet.
 
 ## Versionet
@@ -38,11 +41,12 @@ Pritshmëria: [Prisja të shfaqej mesazhi se udhëtimi nuk ekziston]
 Vëzhgimi: [U shfaq mesazhi “Udhëtimi nuk u gjet”]
 
 ### Prova 3
-Hapat: [Hapa adresën /udhetimi/abc/kerkesa]
-Pritshmëria: [Prisja të shfaqej mesazhi se udhëtimi nuk ekziston, sepse ID-ja nuk është e vlefshme]
-Vëzhgimi: [U shfaq mesazhi “Udhëtimi nuk u gjet”]
 
-Provat pas korrigjimit
+Hapat: Hapa adresën `/udhetimi/abc/kerkesa`.
+
+Pritshmëria: Prisja të shfaqej mesazhi se udhëtimi nuk ekziston, sepse ID-ja nuk është e vlefshme.
+
+Vëzhgimi: U shfaq mesazhi “Udhëtimi nuk u gjet”.
 
 Prova 1
 Hapat: Hapa faqen kryesore dhe kontrollova tri kartelat e udhëtimeve.
