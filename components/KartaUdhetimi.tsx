@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { Udhetim } from "@/lib/udhetimet";
 
@@ -14,6 +13,8 @@ export function KartaUdhetimi({
       </h2>
 
       <p>Ora: {udhetim.ora}</p>
+
+      <p>Vendtakimi: {udhetim.vendtakimi}</p>
 
       <p>Vende të lira: {udhetim.vende}</p>
 

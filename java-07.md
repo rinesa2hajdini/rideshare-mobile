@@ -15,35 +15,53 @@ Të dhënat fiktive të rastit: Mitrovicë → AAB, 09:25, 3 vende. Ora për pro
 [Pres qe ne liste te shfaqen udhetimet me te dhenat e tyre, si nisja, destinacioni, ora dhe vendet e lira. Kur te klikoj te ID 2, pres te hapen detajet e po atij udhetimi dhe te jene te njejta me ato ne liste. Nese kerkoj nje ID qe nuk ekziston, pres te shfaqet mesazhi se udhetimi nuk u gjet] Para kodimit: çfarë pret në listë, detaje dhe te skenari që zgjodhe? Shkruaj me fjalët e tua.
 
 ## Dy probleme
-1. [PLOTËSO] Çfarë pe dhe me cilët hapa e përsërite?
-2. [PLOTËSO] Një problem ose paqartësi tjetër.
+1. Në kartelat e listës nuk shfaqej vendtakimi. E vërejta duke hapur faqen kryesore dhe duke krahasuar informacionet në kartelë me faqen e detajeve.
+
+2. Përdoruesi duhej të hapte detajet për ta parë vendtakimin, edhe pse ky informacion është i rëndësishëm për udhëtimin.
 
 ## Korrigjimi
-Skedari: [PLOTËSO]
-[PLOTËSO] Çfarë bën ky skedar, çfarë ndryshove dhe pse?
+Shtova shfaqjen e vendtakimit në kartelën e secilit udhëtim, duke përdorur `udhetim.vendtakimi`. Kështu përdoruesi e sheh këtë informacion drejtpërdrejt në listë, pa pasur nevojë të hapë detajet.
 
 ## Versionet
-Para: [PLOTËSO]
+Para: [https://github.com/rinesa2hajdini/rideshare-mobile/commit/79934a5daf0c016768a166e714765f35e48b767e)]
 Pas: [PLOTËSO]
 
 ## Provat që bëra
 ### Prova 1
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: [Hapa listën e udhëtimeve dhe klikova te udhëtimi me ID 2]
+Pritshmëria: [Prisja që të hapeshin detajet e udhëtimit të zgjedhur]
+Vëzhgimi: [U hapën detajet Fushë Kosovë – AAB, ora 08:15, me 1 vend të lirë. Të dhënat përputheshin me udhëtimin në listë]
 
 ### Prova 2
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: [Hapa adresën /udhetimi/999/kerkesa]
+Pritshmëria: [Prisja të shfaqej mesazhi se udhëtimi nuk ekziston]
+Vëzhgimi: [U shfaq mesazhi “Udhëtimi nuk u gjet”]
 
 ### Prova 3
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: [Hapa adresën /udhetimi/abc/kerkesa]
+Pritshmëria: [Prisja të shfaqej mesazhi se udhëtimi nuk ekziston, sepse ID-ja nuk është e vlefshme]
+Vëzhgimi: [U shfaq mesazhi “Udhëtimi nuk u gjet”]
+
+Provat pas korrigjimit
+
+Prova 1
+Hapat: Hapa faqen kryesore dhe kontrollova tri kartelat e udhëtimeve.
+Pritshmëria: Prisja që vendtakimi të shfaqej në secilën kartelë.
+Vëzhgimi: Vendtakimi u shfaq saktë në të tri kartelat.
+
+Prova 2
+Hapat: Hapa detajet e udhëtimit me ID 2.
+Pritshmëria: Prisja që vendtakimi të ishte i njëjtë me atë në kartelë.
+Vëzhgimi: Në të dyja faqet shfaqej “Te stacioni kryesor”.
+
+Prova 3
+Hapat: Kontrollova udhëtimin me ID 3, i cili kishte 0 vende të lira.
+Pritshmëria: Prisja që vendtakimi të shfaqej në kartelë dhe të mos lejohej kërkesa për vend.
+Vëzhgimi: Vendtakimi “Qendra e qytetit” u shfaq dhe në detaje u shfaq “Nuk ka vende të lira”.
+
 
 ## Ndryshimi i ri
-[PLOTËSO] Hyrja që ndryshoi kolegu, çfarë parashikove dhe pse doli ai rezultat. Nëse nuk e ke demonstruar ende, shkruaje qartë.
+Nuk e kam demonstruar ende ndryshimin e hyrjes nga një koleg. Prandaj nuk kam parashikim dhe rezultat për këtë provë.
 
 ## Ndihma nga AI
-[PLOTËSO] Shëno ndihmën dhe çfarë verifikove vetë, ose: Nuk përdora AI.
+Përdora AI për të shqyrtuar kodin, për të identifikuar një paqartësi në kartelat e udhëtimeve dhe për të marrë udhëzime për korrigjimin. Ndryshimin e vendtakimit në kartela dhe rezultatet e provave i verifikova vetë në aplikacion.
