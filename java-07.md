@@ -26,43 +26,42 @@ Skedari: `components/KartaUdhetimi.tsx`
 Shtova shfaqjen e vendtakimit në kartelën e secilit udhëtim, duke përdorur `udhetim.vendtakimi`. Kështu përdoruesi e sheh këtë informacion drejtpërdrejt në listë, pa pasur nevojë të hapë detajet.
 
 ## Versionet
-Para: [https://github.com/rinesa2hajdini/rideshare-mobile/commit/79934a5daf0c016768a166e714765f35e48b767e)]
-Pas: [(https://github.com/rinesa2hajdini/rideshare-mobile/commit/bb463d26b5db1b76f16b275e6955c2c8aa643136)]
+Para: https://github.com/rinesa2hajdini/rideshare-mobile/commit/79934a5daf0c016768a166e714765f35e48b767e
+Pas: https://github.com/rinesa2hajdini/rideshare-mobile/commit/bb463d26b5db1b76f16b275e6955c2c8aa643136
 
 ## Provat që bëra
+
 ### Prova 1
-Hapat: [Hapa listën e udhëtimeve dhe klikova te udhëtimi me ID 2]
-Pritshmëria: [Prisja që të hapeshin detajet e udhëtimit të zgjedhur]
-Vëzhgimi: [U hapën detajet Fushë Kosovë – AAB, ora 08:15, me 1 vend të lirë. Të dhënat përputheshin me udhëtimin në listë]
+Hapat: Hapa listën e udhëtimeve dhe klikova te udhëtimi me ID 2.
+Pritshmëria: Prisja që të hapeshin detajet e udhëtimit të zgjedhur.
+Vëzhgimi: U hapën detajet Fushë Kosovë – AAB, ora 08:15, me 1 vend të lirë. Të dhënat përputheshin me udhëtimin në listë.
 
 ### Prova 2
-Hapat: [Hapa adresën /udhetimi/999/kerkesa]
-Pritshmëria: [Prisja të shfaqej mesazhi se udhëtimi nuk ekziston]
-Vëzhgimi: [U shfaq mesazhi “Udhëtimi nuk u gjet”]
-
-### Prova 3
-
-Hapat: Hapa adresën `/udhetimi/abc/kerkesa`.
-
-Pritshmëria: Prisja të shfaqej mesazhi se udhëtimi nuk ekziston, sepse ID-ja nuk është e vlefshme.
-
+Hapat: Hapa adresën `/udhetimi/999/kerkesa`.
+Pritshmëria: Prisja të shfaqej mesazhi se udhëtimi nuk ekziston.
 Vëzhgimi: U shfaq mesazhi “Udhëtimi nuk u gjet”.
 
-Prova 1
+### Prova 3
+Hapat: Hapa adresën `/udhetimi/abc/kerkesa`.
+Pritshmëria: Prisja të shfaqej mesazhi se udhëtimi nuk ekziston, sepse ID-ja nuk është e vlefshme.
+Vëzhgimi: U shfaq mesazhi “Udhëtimi nuk u gjet”.
+
+### Provat pas korrigjimit
+
+### Prova 1
 Hapat: Hapa faqen kryesore dhe kontrollova tri kartelat e udhëtimeve.
 Pritshmëria: Prisja që vendtakimi të shfaqej në secilën kartelë.
 Vëzhgimi: Vendtakimi u shfaq saktë në të tri kartelat.
 
-Prova 2
+### Prova 2
 Hapat: Hapa detajet e udhëtimit me ID 2.
 Pritshmëria: Prisja që vendtakimi të ishte i njëjtë me atë në kartelë.
 Vëzhgimi: Në të dyja faqet shfaqej “Te stacioni kryesor”.
 
-Prova 3
+### Prova 3
 Hapat: Kontrollova udhëtimin me ID 3, i cili kishte 0 vende të lira.
 Pritshmëria: Prisja që vendtakimi të shfaqej në kartelë dhe të mos lejohej kërkesa për vend.
 Vëzhgimi: Vendtakimi “Qendra e qytetit” u shfaq dhe në detaje u shfaq “Nuk ka vende të lira”.
-
 
 ## Ndryshimi i ri
 Nuk e kam demonstruar ende ndryshimin e hyrjes nga një koleg. Prandaj nuk kam parashikim dhe rezultat për këtë provë.
