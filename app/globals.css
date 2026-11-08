@@ -120,3 +120,51 @@ main {
     font-size: 34px;
   }
 }
+
+
+/* Zgjedhja e vendtakimit */
+
+.location-picker {
+  margin: 24px 0;
+  padding: 22px;
+  background: #131e30;
+  border: 1px solid #34445f;
+  border-radius: 14px;
+}
+
+.location-picker h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.location-picker p {
+  color: #c2cee0;
+  line-height: 1.6;
+}
+
+.location-picker button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.location-picker input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #526581;
+  border-radius: 8px;
+  background: #0b1220;
+  color: #edf2fc;
+  font-size: 15px;
+}
+
+.location-picker input:focus {
+  outline: 2px solid #89ddff;
+  border-color: #89ddff;
+}
+
+.location-picker input::placeholder {
+  color: #8998ae;
+}

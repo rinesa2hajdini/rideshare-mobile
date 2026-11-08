@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
+import ZgjedhVendtakimin from "@/components/ZgjedhVendtakimin";
 
 export const instant = false;
 
@@ -65,7 +66,7 @@ export default async function Kerkesa({
           Kjo është një demonstrim i kërkesës për rezervim.
           Ende nuk ruhet asnjë rezervim në databazë.
         </p>
-
+<ZgjedhVendtakimin />
         <Link className="action" href={`/udhetimi/${id}`}>
           Kthehu te detajet
         </Link>
